@@ -11,6 +11,34 @@ html {
   font-family: 'Nunito', sans-serif;
   font-size: 10px;
   box-sizing: border-box;
+  --white: #FAFAFA;
+  --gray: #D7D4ED;
+  --gray-opaque: rgba(255, 255, 255, .2);
+  --black-opaque: rgba(0, 0, 0, .7);
+  --purple: rgba(49, 24, 131, 0.5);
+  --purple-opaque: rgba(72, 56, 149, 0.8);
+  --primary: rgba(49, 24, 131, 0.9);
+  --secundary: #EB648C;
+  --secundary-hover: #CE587B;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--purple) var(--gray);
+}
+
+body::-webkit-scrollbar {
+  width: 1.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--gray);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--purple) ;
+  border-radius: 6px;
+  border: 3px solid var(--gray);
 }
 
 a {
@@ -58,7 +86,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  border-bottom: 1px solid var(--gray-opaque);
 }
 
 .nav-brand {
@@ -67,18 +95,18 @@ nav {
 
 .menu-icons i {
   font-size: 3.5rem;
-  color: #FAFAFA;
+  color: var(--white);
   cursor: pointer;
 }
 
 .close i {
-  color: #EB648C;
+  color: var(--secundary);
 }
 
 .nav-list {
   width: 25rem;
   height: 100vh;
-  background-color: #D7D4ED;
+  background-color: var(--gray);
   position: fixed;
   top: 0;
   right: -26rem;
@@ -107,7 +135,7 @@ nav {
 .nav-link {
   font-size: 1.6rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, .7);
+  color: var(--black-opaque);
 }
 
 /* Section hero */
@@ -115,7 +143,7 @@ nav {
   width: 100%;
   height: 80vh;
   background: 
-    linear-gradient(135deg, rgba(49, 24, 131, 0.9) 0%, rgba(72, 56, 149, 0.8) 100%),
+    linear-gradient(135deg, var(--primary) 0%, var(--purple-opaque) 100%),
     url('./images/header-bg.jpg') center no-repeat;
   background-size: cover;
   position: relative;
@@ -135,7 +163,7 @@ nav {
 .main-message {
   width: 100%;
   max-width: 50rem;
-  color: #FAFAFA;
+  color: var(--white);
   text-transform: uppercase;
   transform: translateY(20%);
 }
@@ -155,9 +183,9 @@ nav {
 }
 
 .btn {
-  background-color: #EB648C;
+  background-color: var(--secundary);
   border-radius: 2rem;
-  color: #FAFAFA;
+  color: var(--white);
   display: inline-block;
   margin-top: 2rem;
   padding: 1rem 2.5rem;
@@ -166,7 +194,7 @@ nav {
 }
 
 .btn:hover {
-  background-color: #CE587B;
+  background-color: var(--secundary-hover);
 }
 
 /* Section experience */
@@ -178,7 +206,7 @@ nav {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 10rem;
-  color: rgba(0, 0, 0, .7);
+  color: var(--black-opaque);
 }
 
 .title-heading h3 {
@@ -204,7 +232,7 @@ nav {
 .activies-grid-item {
   height: 40rem;
   padding: 5rem;
-  color: #FAFAFA;
+  color: var(--white);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -219,7 +247,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(135deg, rgba(49, 24, 131, 0.9) 0%, rgba(72, 56, 149, 0.8) 100%);
+  background-image: linear-gradient(135deg, var(--primary) 0%, var(--purple-opaque) 100%);
   z-index: -1;
 }
 
@@ -237,7 +265,7 @@ nav {
 
 .activies-grid-item i {
   font-size: 4rem;
-  color: #EB648C;
+  color: var(--secundary);
 }
 
 .activies-grid-item h1 {
@@ -252,7 +280,7 @@ nav {
   width: 100%;
   height: 80vh;
   background: 
-    linear-gradient(135deg, rgba(49, 24, 131, 0.9) 0%, rgba(72, 56, 149, 0.8) 100%),
+    linear-gradient(135deg, var(--primary) 0%, var(--purple-opaque) 100%),
     url('./images/testimonials-bg.jpg') center no-repeat fixed;
   background-size: cover;
   position: relative;
@@ -271,7 +299,7 @@ nav {
 
 .testimonial {
   width: 100%;
-  color: #FAFAFA;
+  color: var(--white);
   position: absolute;
   top: 55%;
   left: 50%;
@@ -291,7 +319,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   font-size: 8rem;
-  color: #EB648C;
+  color: var(--secundary);
   opacity: .5;
   z-index: -1;
 }
@@ -300,7 +328,7 @@ nav {
   width: 10rem;
   height: 10rem;
   border-radius: 100%;
-  border: 3px solid #EB648C;
+  border: 3px solid var(--secundary);
 }
 
 /* Section begin adventures */
@@ -312,15 +340,15 @@ nav {
 }
 
 .adventure-grid-item p {
-  color: rgba(0, 0, 0, .7);
+  color: var(--black-opaque);
 }
 
 /* Footer */
 footer {
   padding: 2.5rem 0;
-  background-color: #D7D4ED;
+  background-color: var(--gray);
   text-align: center;
-  color: rgba(0, 0, 0, .7);
+  color: var(--black-opaque);
 }
 
 /* Media queries */
@@ -374,7 +402,7 @@ footer {
 
   .nav-link,
   .current {
-    color: #FAFAFA;
+    color: var(--white);
     position: relative;
     font-size: 1.3rem;
   }
@@ -385,7 +413,7 @@ footer {
     position: absolute;
     left: 0;
     bottom: -0.5rem;
-    background-color: #EB648C;
+    background-color: var(--secundary);
     width: 100%;
     height: 2px;
     transform: scaleX(0);
